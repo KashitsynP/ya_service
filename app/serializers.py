@@ -39,3 +39,9 @@ class UserInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ["id", "id_type"]
+
+
+class LatencySerializer(serializers.Serializer):
+    """Serializer for latency."""
+
+    message = serializers.CharField()

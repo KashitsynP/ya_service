@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate
 from rest_framework import status, permissions
-from rest_framework.generics import CreateAPIView, RetrieveAPIView
+from rest_framework.generics import CreateAPIView, RetrieveAPIView, \
+    GenericAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -9,7 +10,7 @@ from .serializers import (
     SignupSerializer,
     SignInSerializer,
     UserInfoSerializer,
-    LogoutSerializer,
+    LogoutSerializer, LatencySerializer,
 )
 
 
@@ -103,9 +104,10 @@ class UserInfoView(RetrieveAPIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-class LatencyView(APIView):
+class LatencyView(GenericAPIView):
     """Returns the delay from the service to ya.ru."""
 
+    serializer_class = LatencySerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
