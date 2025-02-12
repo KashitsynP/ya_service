@@ -1,5 +1,4 @@
 from django.contrib.auth import authenticate
-from django.core.management import call_command
 from rest_framework import status, permissions
 from rest_framework.generics import CreateAPIView, RetrieveAPIView, \
     GenericAPIView
@@ -120,10 +119,3 @@ class LatencyView(GenericAPIView):
                 {"error": "Failed to reach ya.ru"},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
-
-
-class RunCommandView(APIView):
-    def get(self, request):
-        # Выполнение миграций
-        call_command("migrate")
-        return Response({"status": "ok"})
