@@ -6,9 +6,8 @@
 5. Создать БД в PostgreSQL
 6. Запустить командой ```python manage.py runserver```
 
-Коллекция для Postman находится в файле **App service.postman_collection.json**
 
-[Потыкать можно тут](https://ya-service.onrender.com/api/docs/)
+Коллекция для Postman находится в файле **App service.postman_collection.json**
 
 
 ## Описание API:
@@ -19,3 +18,5 @@
 * **```logout```** - с параметром ```all```:
     * **```true```** - удаляет все токены пользователя
     * **```false```** - удаляет только текущий токен
+  
+[Потыкать можно тут](https://ya-service.onrender.com/api/docs/)
