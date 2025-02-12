@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: django-api
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn ya_service.wsgi:app"
+    envVars:
+      - key: SECRET_KEY
+        sync: false
+      - key: DEBUG
+        value: "False"
