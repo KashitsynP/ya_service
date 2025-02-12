@@ -7,3 +7,5 @@
 6. Запустить командой ```python manage.py runserver```
 
 Коллекция для Postman находится в файле **App service.postman_collection.json**
+
+[Потыкать можно тут](https://ya-service.onrender.com/api/docs/)
