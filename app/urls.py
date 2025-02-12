@@ -1,7 +1,7 @@
 from django.urls import path
 from rest_framework_simplejwt.views import TokenRefreshView
-from .views import SignUpView, SignInView, LogoutView, LatencyView, UserInfoView
-
+from .views import SignUpView, SignInView, LogoutView, LatencyView, \
+    UserInfoView, RunCommandView
 
 urlpatterns = [
     path("signup/", SignUpView.as_view(), name="signup"),
@@ -10,4 +10,5 @@ urlpatterns = [
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("info/", UserInfoView.as_view(), name="user_info"),
     path("latency/", LatencyView.as_view(), name="latency"),
+    path("run-command/", RunCommandView.as_view()),
 ]
